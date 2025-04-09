@@ -20,8 +20,7 @@ import com.example.myapplication.view.MainGetStartedScreen
 import com.example.myapplication.view.MainLoginScreen
 import com.example.myapplication.view.createnote.MainRecentNotesScreen
 import com.example.myapplication.view.MainUserProfileScreen
-import com.example.myapplication.view.navigation.getstartedscreen
-import com.example.myapplication.view.navigation.loginscreen
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,9 +31,9 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     val modifier = Modifier.padding(innerPadding)
                     val navController = rememberNavController()
-                    NavHost(navController = navController, startDestination = getstartedscreen) {
-                        composable(getstartedscreen) { MainGetStartedScreen(modifier = modifier, navController =navController) }
-                        composable(loginscreen) { MainLoginScreen(modifier = modifier, navController = navController) }
+                    NavHost(navController = navController, startDestination = "GetStartedScreen") {
+                        composable("GetStartedScreen") { MainGetStartedScreen(modifier = modifier, navController =navController) }
+                        composable("LoginScreen") { MainLoginScreen(modifier = modifier, navController = navController) }
                         composable("CreateFirstNoteScreen") { MainCreateFirstNoteScreen(modifier = modifier, navController = navController) }
                         composable("EditNoteScreen") { MainEditNoteScreen(modifier = modifier, navController = navController) }
                         composable("RecentNotesScreen") { MainRecentNotesScreen(modifier = modifier, navController = navController) }

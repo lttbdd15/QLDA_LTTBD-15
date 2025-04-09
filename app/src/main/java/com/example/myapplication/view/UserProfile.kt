@@ -2,6 +2,7 @@ package com.example.myapplication.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -38,17 +39,17 @@ import com.example.myapplication.R
 
 
 @Composable
-fun BackButton(){
+fun BackButton(navController: NavController){
     Image(painter = painterResource(R.drawable.button_back),
         contentDescription = "Backbutton",
-        modifier = Modifier.height(40.dp).width(40.dp))
+        modifier = Modifier.height(40.dp).width(40.dp).clickable { navController.navigate("CreateFirstNoteScreen") })
 }
 
 @Composable
 fun Avata(painter: Painter ){
     Box(contentAlignment = Alignment.TopStart, modifier = Modifier.padding(top = 40.dp)){
     Image(
-        painter = painterResource(id = R.drawable.icon_avata),
+        painter = painterResource(id = R.drawable.ic_avata),
         contentDescription = "Avatar",
         contentScale = ContentScale.Crop,
         modifier = Modifier
@@ -86,9 +87,9 @@ fun ContentInfo(content:String,fontsize:Int){
 @Composable
 fun optionList(): List<Pair<Painter, String>> {
     val options = listOf(
-        Pair(painterResource(R.drawable.icon_buypremium), "Buy Premium"),
-        Pair(painterResource(R.drawable.icon_editprofile), "Edit Profile"),
-        Pair(painterResource(R.drawable.icon_changetheme), "App Theme")
+        Pair(painterResource(R.drawable.ic_buypremium), "Buy Premium"),
+        Pair(painterResource(R.drawable.ic_editprofile), "Edit Profile"),
+        Pair(painterResource(R.drawable.ic_changetheme), "App Theme")
     )
     return options
     }
@@ -99,7 +100,7 @@ fun Content(painter: Painter,content: String){
             contentDescription = "buy premium", modifier = Modifier.size(30.dp))
         Text(content, fontSize = 30.sp, modifier = Modifier.padding(start = 10.dp))
         Spacer(modifier = Modifier.weight(1f))
-        Image(painter = painterResource(R.drawable.icon_moveon),
+        Image(painter = painterResource(R.drawable.ic_moveon),
             contentDescription = "move on", modifier = Modifier.size(30.dp))
     }
 
@@ -125,12 +126,12 @@ fun MainUserProfileScreen(modifier: Modifier=Modifier,navController: NavControll
         verticalArrangement = Arrangement.Top){
     Row (modifier=Modifier.fillMaxWidth()) {
         Spacer(modifier.weight(1f))
-        BackButton()
+        BackButton(navController)
         Spacer(modifier.weight(1f))
         val title = "Profile"
         Title(title)
         }
-        Avata(painterResource(R.drawable.icon_camera))
+        Avata(painterResource(R.drawable.ic_camera))
 
 
         val name = "Name"

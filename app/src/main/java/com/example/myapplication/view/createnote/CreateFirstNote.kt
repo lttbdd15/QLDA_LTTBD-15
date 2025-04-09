@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.myapplication.R
+//import com.example.myapplication.R
 import com.example.myapplication.ui.theme.ButtonColor
 import com.example.myapplication.ui.theme.TextInButton
 import com.example.myapplication.view.Title
@@ -32,7 +33,7 @@ import com.example.myapplication.view.Title
 @Composable
 fun OptionButton(navController: NavController){
     Image(
-        painter = painterResource(R.drawable.icon_option),
+        painter = painterResource(R.drawable.ic_option),
         contentDescription = "option button",
         modifier = Modifier.
         padding(15.dp).

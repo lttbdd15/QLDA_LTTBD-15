@@ -62,7 +62,9 @@ fun Content(content:String){
 fun MainEditNoteScreen(modifier: Modifier=Modifier,navController: NavController){
     Column (modifier=modifier.fillMaxSize()){
     Row {
-        BackButton()
+        BackButton(
+            navController
+        )
         val title="Edit Note"
         Title(title)
         }

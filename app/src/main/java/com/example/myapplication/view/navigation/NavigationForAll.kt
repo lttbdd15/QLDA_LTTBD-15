@@ -2,36 +2,35 @@ package com.example.myapplication.view.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
-val loginscreen="LoginScreen"
-val editnotescreen="EditNoteScreen"
-val userprofilescreen="UserProfileScreen"
 
-val getstartedscreen="GetStartedScreen"
-val createfirstscreen="CreateFirstNoteScreen"
-val recentnotesscreen="RecentNotesScree"
 class NavigationForAll {
     fun getStartedToLogin(navController: NavController){ // Đã sửa tên hàm
-        navController.navigate(loginscreen)
+        navController.navigate("LoginScreen")
     }
     @Composable
     fun CreateFirstNote_To_EditNote(navController: NavController) { // Truyền navController vào
-        navController.navigate(editnotescreen)
+        navController.navigate("EditNoteScreen")
     }
     @Composable
     fun CreateFirstNote_To_UserProfile(navController: NavController) { // Truyền navController vào
-        navController.navigate(userprofilescreen)
+        navController.navigate("UserProfileScreen")
     }
     @Composable
     fun RecentNote_To_EditNote(navController: NavController) { // Truyền navController vào
-        navController.navigate(editnotescreen)
+        navController.navigate("EditNoteScreen")
     }
 
     @Composable
     fun RecentNote_To_UserProfile(navController: NavController) { // Truyền navController vào
-        navController.navigate(userprofilescreen)
+        navController.navigate("UserProfileScreen")
     }
     @Composable
     fun BackButton(navController: NavController){ // Truyền navController vào
         navController.popBackStack()
+    }
+
+    @Composable
+    fun Login_To_CreateFirstNote(navController: NavController){
+        navController.navigate("RecentNotesScreen")
     }
 }

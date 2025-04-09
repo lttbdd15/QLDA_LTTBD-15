@@ -32,6 +32,9 @@ import com.example.myapplication.view.navigation.NavigationForAll
 
 
 
+val navigationForAll = NavigationForAll()
+
+
 @Composable
 fun Title(title: String){
     Text(title,
@@ -45,7 +48,7 @@ fun Title(title: String){
 @Composable
 
 fun LogoUth(){
-    Image(painter = painterResource(R.drawable.background_logouth),
+    Image(painter = painterResource(R.drawable.bg_logouth),
         contentDescription = "icon content",
         modifier = Modifier.
         height(200.dp).
@@ -76,10 +79,10 @@ fun Content(titlecotent:String,content:String){
 
 @Composable
 fun ButtonGetStarted(navController: NavController,content:String){
-    Button(onClick = {navController.navigate("LoginScreen")}
-    , modifier = Modifier.fillMaxWidth()
-        .padding(top = 88.dp,start = 28.dp, end = 28.dp)
-        .height(74.dp),
+    Button(onClick = {navigationForAll.getStartedToLogin(navController)}
+        , modifier = Modifier.fillMaxWidth()
+            .padding(top = 88.dp,start = 28.dp, end = 28.dp)
+            .height(74.dp),
         shape = RoundedCornerShape(12.dp),
         colors = ButtonDefaults.buttonColors(Color(ButtonColor), contentColor = Color(TextInButton))
     ){
