@@ -32,9 +32,6 @@ import com.example.myapplication.view.navigation.NavigationForAll
 
 
 
-val navigationForAll = NavigationForAll()
-
-
 @Composable
 fun Title(title: String){
     Text(title,
@@ -79,7 +76,7 @@ fun Content(titlecotent:String,content:String){
 
 @Composable
 fun ButtonGetStarted(navController: NavController,content:String){
-    Button(onClick = {navigationForAll.getStartedToLogin(navController)}
+    Button(onClick = {navController.navigate("LoginScreen")}
     , modifier = Modifier.fillMaxWidth()
         .padding(top = 88.dp,start = 28.dp, end = 28.dp)
         .height(74.dp),

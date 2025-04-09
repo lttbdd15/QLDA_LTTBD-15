@@ -35,7 +35,7 @@ data class ContentData(val title: String, val content: String)
 @Composable
 fun Content(title: String, content: String, modifier: Modifier = Modifier) {
     Column(modifier = modifier.padding(10.dp).fillMaxWidth()) {
-        Text(text = title, style = androidx.compose.material.MaterialTheme.typography.h6,
+        Text(text = title,
             textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
         Spacer(modifier = Modifier.height(4.dp))
         Text(text = content,
