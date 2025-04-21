@@ -34,14 +34,6 @@ import kotlinx.coroutines.launch
 
 
 
-@Composable
-fun BackgroundImage(){
-    Image(
-        painter = painterResource(R.drawable.bg_login),
-        contentDescription = "Background",
-        modifier = Modifier.fillMaxSize())
-}
-
 
 @Composable
 fun LogoIcon(){
@@ -100,7 +92,6 @@ fun MainLoginScreen(modifier: Modifier=Modifier,navController: NavController){
     val context = LocalContext.current
     val googleAuthClient = remember { GoogleAuthClient(context) }
 
-    BackgroundImage()
     Column (
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top,

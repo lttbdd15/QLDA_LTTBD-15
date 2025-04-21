@@ -83,7 +83,7 @@ class GoogleAuthClient(private val context: Context,){
                 GetGoogleIdOption.Builder()
                     .setFilterByAuthorizedAccounts(false)
                     .setServerClientId(
-                        "842651811029-ka3ckia1sj9ch1jnecudmf108nim83td.apps.googleusercontent.com"
+                        ""
                     )
                     .setAutoSelectEnabled(false)
                     .build()

@@ -43,6 +43,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.myapplication.R
 import com.example.myapplication.model.data.AppDatabase
 import com.example.myapplication.model.data.Note
+import com.example.myapplication.ui.theme.TextInButton
 import com.example.myapplication.ui.theme.singleCardColor
 import com.example.myapplication.view.Title
 import kotlinx.coroutines.CoroutineScope
@@ -125,7 +126,9 @@ fun NoteCardSimple(note: Note, backgroundColor: Color) {
                 .padding(12.dp) // Padding bên trong card
         ) {
             // Display the title
-            Text(text = note.topic, style = androidx.compose.material3.MaterialTheme.typography.titleMedium)
+            Text(text = note.topic,
+                style = androidx.compose.material3.MaterialTheme.typography.titleLarge,
+                color = Color(TextInButton))
             Spacer(modifier = Modifier.height(4.dp)) // Khoảng cách giữa title và content
 
             // Display the content - Basic handling for list format
@@ -134,12 +137,12 @@ fun NoteCardSimple(note: Note, backgroundColor: Color) {
                 // Assuming list format if multiple lines and starts with "1." or "-"
                 Column {
                     lines.forEach { line ->
-                        Text(text = line)
+                        Text(text = line, color = Color(TextInButton))
                     }
                 }
             } else {
                 // Otherwise, display as plain text
-                Text(text = note.content)
+                Text(text = note.content,color = Color(TextInButton))
             }
         }
     }
