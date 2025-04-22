@@ -94,7 +94,7 @@ class GoogleAuthClient(private val context: Context,){
 
         )
     }
-
+    
     suspend fun signOut(){
         credentialManager.clearCredentialState(
             ClearCredentialStateRequest()
